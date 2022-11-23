@@ -1,7 +1,5 @@
 package ej7;
 
-import java.util.ArrayList;
-
 public class SortNumbersArray {
 
 	public static void main(String[] args) {
