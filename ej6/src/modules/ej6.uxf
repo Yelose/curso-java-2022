@@ -5,80 +5,52 @@
     <id>UMLClass</id>
     <coordinates>
       <x>210</x>
-      <y>0</y>
+      <y>10</y>
       <w>210</w>
-      <h>190</h>
+      <h>110</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;ItemInventory&gt;&gt;
-Package::FatClass
-{Some Properties}
+    <panel_attributes>/ItemInventory/
+/Class::AbstractClass/
+
 --
--id: Long
+/-id: getId()/
 _-ClassAttribute: Long_
---
-#Operation(i: int): int
-/+AbstractOperation()/
---
-Responsibilities
--- Resp1
-*-- Resp2*</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLInterface</id>
-    <coordinates>
-      <x>110</x>
-      <y>480</y>
-      <w>100</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes>Notebook
---
-_IsNotebook()_
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>70</x>
-      <y>360</y>
+      <x>100</x>
+      <y>220</y>
       <w>210</w>
-      <h>70</h>
+      <h>90</h>
     </coordinates>
     <panel_attributes>_Pc: Class_
 --
-id-numero-de-serie: Long
-[waiting for message]</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLInterface</id>
-    <coordinates>
-      <x>320</x>
-      <y>510</y>
-      <w>140</w>
-      <h>90</h>
-    </coordinates>
-    <panel_attributes>IdSilla
+isNotebook: Boolean
+noSerie: Long
 --
-lote * 1000 + noLote</panel_attributes>
+getId()
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>370</x>
-      <y>360</y>
+      <x>390</x>
+      <y>210</y>
       <w>210</w>
-      <h>100</h>
+      <h>110</h>
     </coordinates>
     <panel_attributes>_Silla: Class_
 --
-id: IdSilla
 lote: Long
 noLote: Long
-rueditas: TieneRueditas()
+_rueditas: Rodable()_
+--
+getId()
+
 
 </panel_attributes>
     <additional_attributes/>
@@ -86,12 +58,12 @@ rueditas: TieneRueditas()
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>490</x>
-      <y>510</y>
+      <x>480</x>
+      <y>370</y>
       <w>120</w>
       <h>100</h>
     </coordinates>
-    <panel_attributes>Rueditas
+    <panel_attributes>Rodable
 --
 _TieneRueditas()_
 </panel_attributes>
@@ -100,82 +72,50 @@ _TieneRueditas()_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>380</x>
-      <y>450</y>
-      <w>60</w>
+      <x>530</x>
+      <y>310</y>
+      <w>30</w>
       <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>40.0;10.0;10.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>510</x>
-      <y>450</y>
-      <w>60</w>
-      <h>90</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;40.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>150</x>
-      <y>420</y>
-      <w>40</w>
-      <h>90</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>20.0;10.0;10.0;70.0</additional_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>210</x>
-      <y>240</y>
+      <x>520</x>
+      <y>20</y>
       <w>210</w>
-      <h>90</h>
+      <h>70</h>
     </coordinates>
     <panel_attributes>*Enum*
 --
-pc: Pc
-silla: Silla
+PC
+SILLA
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>410</x>
-      <y>290</y>
-      <w>90</w>
-      <h>90</h>
+      <x>370</x>
+      <y>110</y>
+      <w>150</w>
+      <h>120</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;70.0;70.0</additional_attributes>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>130</x>
-      <y>280</y>
+      <x>160</x>
+      <y>110</y>
       <w>100</w>
-      <h>100</h>
+      <h>130</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>80.0;10.0;10.0;80.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>310</x>
-      <y>180</y>
-      <w>30</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+    <panel_attributes>lt=&lt;&lt;-
+bg=TRANSPARENT</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;110.0</additional_attributes>
   </element>
 </diagram>
