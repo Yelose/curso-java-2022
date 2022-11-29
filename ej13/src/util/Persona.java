@@ -1,5 +1,7 @@
 package util;
 
+import java.util.Objects;
+
 public class Persona {
 	private int exp;
 	private String name;
@@ -30,5 +32,27 @@ public class Persona {
 	}
 	public void setAge(int age) {
 		this.age = age;
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(age, exp, name);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Persona other = (Persona) obj;
+		return age == other.age && exp == other.exp && Objects.equals(name, other.name);
+	}
+
+	@Override
+	public String toString() {
+		return "Persona [exp=" + exp + ", name=" + name + ", age=" + age + "]";
 	}
 }
