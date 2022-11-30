@@ -4,8 +4,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -25,6 +28,8 @@ class PersonaTest extends Persona {
 	private Persona p5;
 	
 	List<Persona> personList;
+	TreeSet<Persona> personasTree;
+	List<Persona> grupoTree;
 	
 	@BeforeEach
 	void setUp() throws Exception {
@@ -32,8 +37,7 @@ class PersonaTest extends Persona {
 		marina = new Persona(12346, "Marina", 37);
 		
 		p1 = new Persona(12345, "Marta", 30);
-		p2 = new Persona(12346, "Marina", 37);
-		
+		p2 = new Persona(12346, "Marina", 37);	
 		p3 = new Persona(12349, "Paz", 17);
 		p4 = new Persona(12350, "Nerea", 36);
 		p5 = new Persona(12351, "Cristina", 21);
@@ -42,7 +46,16 @@ class PersonaTest extends Persona {
 		personList.add(marta);
 		personList.add(marina);
 		
-
+		personasTree = new TreeSet<Persona>();
+		personasTree.add(p1);
+		personasTree.add(p2);
+		
+		grupoTree = new ArrayList<Persona>();
+		personasTree.add(p1);
+		personasTree.add(p2);
+		personasTree.add(p3);
+		personasTree.add(p4);
+		personasTree.add(p5);
 	}
 
 	@AfterEach
@@ -55,6 +68,8 @@ class PersonaTest extends Persona {
 		p3 = null;
 		p4 = null;
 		p5 = null;
+		personasTree = null;
+		grupoTree = null;
 	}
 
 	@Test
@@ -95,18 +110,12 @@ class PersonaTest extends Persona {
 	
 	@Test
 	final void testNewPersonasContainsMartaMap() {
-		List<Persona> personaList = new ArrayList<Persona>();
-		personaList.add(marina);
-		personaList.add(marta);
-		assertTrue(personaList.contains(marta));
+		assertTrue(personList.contains(marta));
 	}
 	
 	@Test
 	final void TestNewPersonasContainsMarinaMap() {
-		List<Persona> personaList = new ArrayList<Persona>();
-		personaList.add(marina);
-		personaList.add(marta);
-		assertTrue(personaList.contains(marina));
+		assertTrue(personList.contains(marina));
 	}
 	
 	@Test
@@ -140,14 +149,20 @@ class PersonaTest extends Persona {
 	}
 
 //	@Test
-//	final void getPersonastest() {
-//		Map<Integer, Persona> mapPersons = new HashMap<Integer,Persona>();		
-//		mapPersons.put(p1.getExp(), p1);
-//		mapPersons.put(p1.getExp(), p1);
-//		mapPersons.put(p1.getExp(), p1);
-//		mapPersons.put(p1.getExp(), p1);
-//		mapPersons.put(p1.getExp(), p1);
-//		
-//		assertEquals(mapPersons, PersonaUtil.getPersonas(personList));
+//	final void testOrdenarPersonasFunciona() {
+//		Set<Persona> personasOrdenadas = PersonaUtil.ordenarPersonas(grupoTree);
+//		Iterator<Persona> it = personasOrdenadas.iterator();
+//		assertEquals("Paz", it.next().getName());
+//	}
+//	
+//	@Test
+//	final void testEqualsListaYTreePersons() {
+//		assertEquals(PersonaUtil.ordenarPersonas(personList), personasTree);
+//	}
+	
+//	@Test
+//	final void testOrdenaLaListaTree() {
+//		TreeSet<Persona> personasOrdenadas = PersonaUtil.ordenarPersonas(grupoTree);
+//		assertEquals(personasOrdenadas.first(), p3);
 //	}
 }

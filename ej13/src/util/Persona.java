@@ -2,7 +2,7 @@ package util;
 
 import java.util.Objects;
 
-public class Persona {
+public class Persona implements Comparable<Persona>{
 	private int exp;
 	private String name;
 	private int age;
@@ -54,5 +54,10 @@ public class Persona {
 	@Override
 	public String toString() {
 		return "Persona [exp=" + exp + ", name=" + name + ", age=" + age + "]";
+	}
+
+	@Override
+	public int compareTo(Persona o) {
+		return ((Integer)age).compareTo(o.getAge());
 	}
 }

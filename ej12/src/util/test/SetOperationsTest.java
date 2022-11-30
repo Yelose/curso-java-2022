@@ -2,8 +2,6 @@ package util.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Set;
 
 import org.junit.jupiter.api.AfterEach;
@@ -55,7 +53,6 @@ class SetOperationsTest extends SetOperations {
 
 	@Test
 	final void convertStringToSetAtest() {
-		
 		assertEquals(4, groupA.size());
 	}
 
