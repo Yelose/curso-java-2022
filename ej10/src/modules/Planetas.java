@@ -1,6 +1,6 @@
 package modules;
 
-public enum Planeta {
+public enum Planetas {
 	MERCURIO("Mercurio", 3.303e+23, 2.4397e6), 
 	VENUS("Venus", 4.869e+24, 6.0518e6), 
 	TIERRA("Tierra", 5.976e+24, 6.37814e6), 
@@ -14,12 +14,35 @@ public enum Planeta {
 	private double masa;
 	private double radio;
 	
-	private Planeta(String nombre, double masa, double radio) {
+	private Planetas(String nombre, double masa, double radio) {
 		this.nombre = nombre;
 		this.masa = masa;
 		this.radio = radio;
 	}
-	
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public double getMasa() {
+		return masa;
+	}
+
+	public void setMasa(double masa) {
+		this.masa = masa;
+	}
+
+	public double getRadio() {
+		return radio;
+	}
+
+	public void setRadio(double radio) {
+		this.radio = radio;
+	}	
 
 }
 

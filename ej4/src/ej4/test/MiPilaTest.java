@@ -11,40 +11,45 @@ import org.junit.jupiter.api.Test;
 
 import modules.MiPila;
 
-class MiPilaTest extends MiPila {
+class MiPilaTest extends MiPila<Object> {
 
-	MiPila miPila;
+	MiPila<String> miLista;
 
-	
 	@BeforeEach
 	void setUp() throws Exception {
-		miPila = new MiPila();
-		miPila.push("manzana");
-		miPila.push("plátano");
-		miPila.push("fresa");
-		miPila.push("pera");
+		miLista = new MiPila<String>();
+		miLista.push("manzana");
+		miLista.push("plátano");
+		miLista.push("fresa");
+		miLista.push("pera");
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
-		miPila = null;
+		miLista = null;
 	}
 
 	@Test
 	final void testPop() {
-		assertEquals("pera", miPila.pop());
+		assertEquals("pera", miLista.pop());
+	}
+	
+	@Test
+	final void testPopRemove() {
+		miLista.pop();
+		assertEquals(3, miLista.getList().size());
 	}
 
 	@Test
 	final void testPush() {
-		miPila.push("uva");
-		assertEquals(5, miPila.getList().size());
+		miLista.push("uva");
+		assertEquals(5, miLista.getList().size());
 	}
 
 	@Test
 	final void testPeek() {
-		assertEquals("pera", miPila.peek());
-		assertEquals(4, miPila.getList().size());	
+		assertEquals("pera", miLista.peek());
+		assertEquals(4, miLista.getList().size());	
 	}
 
 	@Test
@@ -54,9 +59,8 @@ class MiPilaTest extends MiPila {
 		listaInvertida.add("fresa");
 		listaInvertida.add("plátano");
 		listaInvertida.add("manzana");
-		miPila.reverse();
-		
-		assertEquals(listaInvertida, miPila.getList());
+		miLista.reverse();	
+		assertEquals(listaInvertida, miLista.getList());
 	}
 
 }
